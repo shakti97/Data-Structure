@@ -26,6 +26,28 @@ public class LinkedListImplementation {
 		}
 		return list;
 	}
+	public static LinkedListImplementation deleteNode(LinkedListImplementation list,int key){
+		Node currNode = list.head;
+		Node prev=null;
+		
+		if(currNode!=null && currNode.data==key){
+			list.head = currNode.next;
+			System.out.println(key+" found and delete ");
+			return list;
+		}
+		while(currNode!=null && currNode.data!=key) {
+			prev=currNode;
+			currNode=currNode.next;
+		}
+		if(currNode!=null) {
+			prev.next = currNode.next;
+			System.out.println(key+" found deleted ");
+		}
+		if(currNode==null) {
+			System.out.println(key+" not found ");
+		}
+		return list;
+	}
 	public static void printList(LinkedListImplementation list) {
 		Node currNode=list.head;
 		System.out.println("Linked List ");
