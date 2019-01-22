@@ -32,7 +32,7 @@ public class LinkedListImplementation {
 		
 		if(currNode!=null && currNode.data==key){
 			list.head = currNode.next;
-			System.out.println(key+" found and delete ");
+			System.out.println(key+" found and delete");
 			return list;
 		}
 		while(currNode!=null && currNode.data!=key) {
