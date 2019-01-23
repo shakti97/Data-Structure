@@ -48,6 +48,10 @@ public class LinkedListImplementation {
 		}
 		return list;
 	}
+	public static LinkedListImplementation deleteAtPosition(LinkedListImplementation list,int index) {
+		Node currNode= list.head;
+		Node prev=null;
+	}
 	public static void printList(LinkedListImplementation list) {
 		Node currNode=list.head;
 		System.out.println("Linked List ");
