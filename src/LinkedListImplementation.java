@@ -67,6 +67,27 @@ public class LinkedListImplementation {
 		}
 		return list;
 	}
+	@SuppressWarnings("null")
+	public static LinkedListImplementation convertIntoDoublyLinkedList(LinkedListImplementation list) {
+		Node currNode=list.head;
+		Node startNode=list.head;
+		while(currNode.next!=null) {
+			currNode=currNode.next;
+		}
+		currNode.next=startNode;
+		DisplayDoublyLinkedList(list);
+		return list;
+	}
+	public static void DisplayDoublyLinkedList(LinkedListImplementation list) {
+		Node start=list.head;
+		Node currNode=start;
+		System.out.println("\nDoubly Linked List");
+		while(currNode.next!=start) {
+			System.out.print(currNode.data+" ");
+			currNode=currNode.next;
+		}
+		System.out.print(currNode.data);
+	}
 	public static void printList(LinkedListImplementation list) {
 		Node currNode=list.head;
 		System.out.println("Linked List ");
@@ -88,8 +109,7 @@ public class LinkedListImplementation {
 		list.insert(list, 8);
 		list.insert(list, 9);
 		printList(list);
-		deleteAtPosition(list,4);
-		printList(list);
+		convertIntoDoublyLinkedList(list);
 	}
 
 }
