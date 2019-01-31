@@ -68,17 +68,17 @@ public class LinkedListImplementation {
 		return list;
 	}
 	@SuppressWarnings("null")
-	public static LinkedListImplementation convertIntoDoublyLinkedList(LinkedListImplementation list) {
+	public static LinkedListImplementation convertIntoCircularLinkedList(LinkedListImplementation list) {
 		Node currNode=list.head;
 		Node startNode=list.head;
 		while(currNode.next!=null) {
 			currNode=currNode.next;
 		}
 		currNode.next=startNode;
-		DisplayDoublyLinkedList(list);
+		DisplayCircularLinkedList(list);
 		return list;
 	}
-	public static void DisplayDoublyLinkedList(LinkedListImplementation list) {
+	public static void DisplayCircularLinkedList(LinkedListImplementation list) {
 		Node start=list.head;
 		Node currNode=start;
 		System.out.println("\nDoubly Linked List");
