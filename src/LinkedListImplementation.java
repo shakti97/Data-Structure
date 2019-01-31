@@ -51,6 +51,21 @@ public class LinkedListImplementation {
 	public static LinkedListImplementation deleteAtPosition(LinkedListImplementation list,int index) {
 		Node currNode= list.head;
 		Node prev=null;
+		int i=0;
+		while(currNode!=null ) {
+			if(i==index) {
+				prev.next=currNode.next;
+				System.out.println("\nposition found and deleted");
+				break;
+			}
+			prev=currNode;
+			currNode=currNode.next;
+			i++;
+		}
+		if(currNode==null) {
+			System.out.println("position not found");
+		}
+		return list;
 	}
 	public static void printList(LinkedListImplementation list) {
 		Node currNode=list.head;
@@ -72,6 +87,8 @@ public class LinkedListImplementation {
 		list.insert(list, 7);
 		list.insert(list, 8);
 		list.insert(list, 9);
+		printList(list);
+		deleteAtPosition(list,4);
 		printList(list);
 	}
 
