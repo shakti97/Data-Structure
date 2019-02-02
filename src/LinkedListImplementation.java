@@ -109,7 +109,7 @@ public class LinkedListImplementation {
 		list.insert(list, 8);
 		list.insert(list, 9);
 		printList(list);
-		convertIntoDoublyLinkedList(list);
+		convertIntoCircularLinkedList(list);
 	}
 
 }
