@@ -74,14 +74,14 @@ public class DoublyLinkedListImplementation {
 		list.insertFront(list, 2);
 		list.insertFront(list, 3);
 		list.insertFront(list, 4);
-		list.insertFront(list, 5);
-		list.insertFront(list, 6);
 		list.insertFront(list, 7);
 		list.insertFront(list, 8);
 		list.insertFront(list, 9);
 		printList(list);
 		deleteNode(list, 2);
 		printList(list);
+		Node node=new Node(5);
+		insertAfterGivenNode(node, 6);
 	}
 
 }
