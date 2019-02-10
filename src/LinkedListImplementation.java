@@ -1,3 +1,5 @@
+import java.util.Collections;
+import java.util.List;
 
 public class LinkedListImplementation {
 	Node head;
@@ -24,6 +26,20 @@ public class LinkedListImplementation {
 			}
 			last.next=new_node;
 		}
+		return list;
+	}
+	public static LinkedListImplementation insertAtPosition(LinkedListImplementation list,int pos,int data) {
+		Node currNode = list.head;
+		Node newNode= new Node(data);
+		Node prev=null;
+		int i=1;
+		while(i != pos) {
+			prev=currNode;
+			currNode=currNode.next;
+			i++;
+		}
+		newNode.next=currNode;
+		prev.next=newNode;
 		return list;
 	}
 	public static LinkedListImplementation deleteNode(LinkedListImplementation list,int key){
@@ -109,7 +125,10 @@ public class LinkedListImplementation {
 		list.insert(list, 2);
 		list.insert(list, 6);
 		printList(list);
-		convertIntoCircularLinkedList(list);
+		insertAtPosition(list, 4, 10);
+		printList(list);
+//		convertIntoCircularLinkedList(list);
+//		Collections.sort(List<T> list);
 	}
 
 }
