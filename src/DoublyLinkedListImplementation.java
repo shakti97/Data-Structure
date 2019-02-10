@@ -33,6 +33,20 @@ public class DoublyLinkedListImplementation {
 		}
 		System.out.println("insert After the Giver Node");
 	}
+	public static void deleteNodeFromPosition(DoublyLinkedListImplementation list, int pos, int data) {
+		Node start=list.head;
+		Node currNode=start;
+		Node prev_Node=null;
+		int i=1;
+		while(i!=pos) {
+			prev_Node=currNode;
+			currNode=currNode.next;
+			i++;
+		}
+		Node temp_Node=currNode.next;
+		prev_Node.next=temp_Node;
+		temp_Node.prev=prev_Node;
+	}
 	public static void deleteNode(DoublyLinkedListImplementation list,int data) {
 		Node start=list.head;
 		Node currNode=start;
