@@ -33,7 +33,8 @@ public class DoublyLinkedListImplementation {
 		}
 		System.out.println("insert After the Giver Node");
 	}
-	public static void deleteNodeFromPosition(DoublyLinkedListImplementation list, int pos, int data) {
+	public static void deleteNodeFromPosition(DoublyLinkedListImplementation list, int pos) {
+		System.out.println("deleteing node from position "+pos);
 		Node start=list.head;
 		Node currNode=start;
 		Node prev_Node=null;
@@ -46,6 +47,7 @@ public class DoublyLinkedListImplementation {
 		Node temp_Node=currNode.next;
 		prev_Node.next=temp_Node;
 		temp_Node.prev=prev_Node;
+		System.out.println("deleted node data is "+currNode.data);
 	}
 	public static void deleteNode(DoublyLinkedListImplementation list,int data) {
 		Node start=list.head;
@@ -94,8 +96,8 @@ public class DoublyLinkedListImplementation {
 		printList(list);
 		deleteNode(list, 2);
 		printList(list);
-		Node node=new Node(5);
-		insertAfterGivenNode(node, 6);
+		deleteNodeFromPosition(list, 5);
+		printList(list);
 	}
 
 }
