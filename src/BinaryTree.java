@@ -35,6 +35,22 @@ public class BinaryTree {
 		}
 		return current.data;
 	}
+	int maxValue(Node node) {
+		Node current=node;
+		while(current.right!=null) {
+			current=current.right;
+		}
+		return current.data;
+	}
+	public Node levelOrderTraversal(Node node) {
+		Node current=node;
+		Node LeftNode=null;
+		Node RightNode=null;
+		while(current!=null) {
+			LeftNode=current.left;
+			RightNode=current.right;
+		}
+	}
 	public static void main(String[] args) {
 		BinaryTree tree= new BinaryTree();
 //		tree.root=new Node(100);
@@ -53,6 +69,7 @@ public class BinaryTree {
 		tree.insert(root,1);
 		tree.insert(root,2);
 		System.out.println("minimum value of BST is " +tree.minValue(root));
+		System.out.println("maximum value of BST is "+tree.maxValue(root));
 		System.out.println("tree "+tree);
 	}
 
