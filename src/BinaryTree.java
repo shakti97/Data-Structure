@@ -1,3 +1,5 @@
+import java.util.logging.Level;
+
 class Node{
 	int data;
 	Node left, right;
@@ -42,8 +44,25 @@ public class BinaryTree {
 		}
 		return current.data;
 	}
-	public Node levelOrderTraversal(Node node) {
-		return node;
+	public void inOrderTraversal(Node node) {
+		if(node==null) {
+			return;
+		}
+		else {
+			inOrderTraversal(node.left);
+			System.out.print(node.data+ " ");
+			inOrderTraversal(node.right);
+		}
+	}
+	public void preOrderTraversal(Node node) {
+		if(node==null) {
+			return;
+		}
+		else {
+			System.out.print(node.data+" ");
+			preOrderTraversal(node.left);
+			preOrderTraversal(node.right);
+		}
 	}
 	int treeHeight(Node node) {
 		int height;
@@ -79,7 +98,11 @@ public class BinaryTree {
 		System.out.println("minimum value of BST is " +tree.minValue(root));
 		System.out.println("maximum value of BST is "+tree.maxValue(root));
 		System.out.println("height "+tree.treeHeight(root));
-		System.out.println("tree "+tree);
+		System.out.println("Inorder Traversal");
+		tree.inOrderTraversal(root);
+		System.out.println("\n PreOrder Traversal");
+		tree.preOrderTraversal(root);
+		System.out.println("\ntree "+tree);
 	}
 
 }
