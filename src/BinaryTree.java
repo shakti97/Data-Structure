@@ -64,6 +64,16 @@ public class BinaryTree {
 			preOrderTraversal(node.right);
 		}
 	}
+	public void postOrderTraversal(Node node) {
+		if(node==null) {
+			return;
+		}
+		else {
+			postOrderTraversal(node.left);
+			postOrderTraversal(node.right);
+			System.out.print(node.data+" ");
+		}
+	}
 	int treeHeight(Node node) {
 		int height;
 		if(node==null) {
@@ -102,6 +112,8 @@ public class BinaryTree {
 		tree.inOrderTraversal(root);
 		System.out.println("\n PreOrder Traversal");
 		tree.preOrderTraversal(root);
+		System.out.println("\n PostOrder Traversal");
+		tree.postOrderTraversal(root);
 		System.out.println("\ntree "+tree);
 	}
 
