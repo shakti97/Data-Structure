@@ -74,6 +74,17 @@ public class BinaryTree {
 			System.out.print(node.data+" ");
 		}
 	}
+	public void levelOrderTraversal(Node node, int level) {
+		if(node==null) {
+			return;
+		}
+		if(level==1) {
+			
+		}
+		else {
+			
+		}
+	}
 	int treeHeight(Node node) {
 		int height;
 		if(node==null) {
